@@ -10,13 +10,14 @@ if(config)
 {
   if (config.use_env_variable) {
     var sequelize = new Sequelize(process.env[config.use_env_variable]);
-  } else {
+  }
+  else {
     var sequelize = new Sequelize(config.database, config.username, config.password, config);
   }
 }
 else
 {
-   var db_url = parseDbUrl(process.env.DATABASE_URL);
+   var db_url = process.env.DATABASE_URL;
    var sequelize = new Sequelize(db_url);
 }
 fs
