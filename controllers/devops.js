@@ -50,7 +50,7 @@ exports.addDevops = function(req, res, next) {
      var department = req.body.department;
      //console.log(req.files);return false;
 
-   
+
         models.devops.create({ name: name, department: department,url:file_name }, {})
           .then(function(devops) {
              models.devops.findAll().then(function(devops) {
@@ -61,20 +61,20 @@ exports.addDevops = function(req, res, next) {
               res.render('add', { layout : null,title: 'home',message:error });
           })
  };
- exports.deleteDevops =  function (req, res, next) {  
+ exports.deleteDevops =  function (req, res, next) {
      //res.send(req.params);
      models.devops.destroy({ where: req.params })
         .then(function(){
         res.redirect('/?message=deleted');
-        })      
+        })
 };
- exports.editDevops =  function (req, res, next) {  
+ exports.editDevops =  function (req, res, next) {
         models.devops.findById(req.params.id).then(function(devops) {
             res.render('edit', { layout : null,title: 'list',data:devops,message:'' });
         })
-    
+
 };
- exports.updateDevops =  function (req, res, next) {  
+ exports.updateDevops =  function (req, res, next) {
     var name = req.body.name;
     var department = req.body.department;
     var id = req.params.id;
@@ -87,13 +87,13 @@ exports.addDevops = function(req, res, next) {
                  res.redirect('/?message=updated');
               });
         })
-    
+
 };
 exports.login = function(req, res, next) {
       res.render('login', { layout : null,title: 'Login',message:null });
-  }; 
- exports.checkLogin =  function (req, res, next) {  
-       models.users.findOne({        
+  };
+ exports.checkLogin =  function (req, res, next) {
+       models.users.findOne({
         where: { username: req.body.username },
       })
        .then(function (getUser) {
@@ -107,7 +107,7 @@ exports.login = function(req, res, next) {
                      req.session.user = getUser.id;
                      res.redirect('/');
                   }
-                 else 
+                 else
                  {
                      res.render('login', { layout : null,title: 'Login',message:'Invalid password' });
                  }
@@ -115,32 +115,32 @@ exports.login = function(req, res, next) {
         }).catch(function (err) {
             res.render('login', { layout : null,title: 'Login',message:err.message });
         })
-    
+
 };
- exports.checkSignIn =  function (req, res, next) { 
-    if(req.session.user)
+ exports.checkSignIn =  function (req, res, next) {
+    if(req.session)
     {
-        if(req.originalUrl =='/login')
+        if(req.originalUrl =='/login' && req.session.user!='')
         {
            res.redirect('/');
         }
         else
         {
           res.locals.user = req.session.user;
-          return next();     
+          return next();
         }
-        
-    } 
+
+    }
     else if(req.originalUrl =='/login')
     {
       res.render('login', { layout : null,title: 'Login',message:null });
     }
-    else 
+    else
     {
          res.redirect('/login');
     }
 
-    
+
 };
 
 // }
