@@ -1,8 +1,0 @@
-NODE_ENV=development
-DATABASE_URL=postgres://okdnvtyumuocfg:9c4b191c7af7e2f1c099bc5ccb6bbb924f01a027e134154180508fbcd75dc3c2@ec2-176-34-111-152.eu-west-1.compute.amazonaws.com:5432/dd377ce46mi4oe
-REDIS_URL=redis://h:null@localhost:6379
-AWS_KEY=AKIAISQD7K7TYEWZYCCA
-AWS_SECRET=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
-AWS_REGION=eu-west-1
-AWS_BUCKET=ucreate
-
