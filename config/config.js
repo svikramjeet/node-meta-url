@@ -2,7 +2,7 @@ var dotenv = require('dotenv');
 dotenv.load();
 var parseDbUrl = require("parse-database-url");
 var db_url = parseDbUrl(process.env.DATABASE_URL);
-console.console.log(db_url);
+console.log(db_url);
 module.exports = {
   development: {
     database: db_url.database,
