@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Simple HTML/CSS Contact Form</title>
+
+
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+  <div class="container">
+  <form id="contact" action="/adduser" method="post">
+    <h3>Add User</h3>
+    <h4>{{message}} </h4>
+     <a href="/" >Home</a>
+    <fieldset>
+      <input placeholder="username" type="text" tabindex="1" required autofocus name="username">
+    </fieldset>
+        <fieldset>
+      <input placeholder="password" type="password" tabindex="1" required autofocus name="password">
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+
+  </form>
+</div>
+
+
+</body>
+</html>

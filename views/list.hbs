@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Simple HTML/CSS Contact Form</title>
+
+
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+  <div class="container">
+  <form id="contact" action="/add" method="post">
+    <h3>List</h3>
+      
+      <a href="/add" >Add Developer</a>
+      <a href="/adduser" >Add User</a>
+      <a href="/listuser" >List users</a>
+      <a href="/logout" >Logout</a>
+       <h4>{{message}} </h4>
+       <h4>{{req}} </h4>
+       <h4>{{res}} </h4>
+    <table border="2">
+      <tr><th>S No.</th><th>Name</th><th>Department</th><th>Action</th></tr>
+
+       {{#each data}}
+      <tr>
+        <td> {{@index}}</td>
+         <td>{{name}}</td>
+         <td>{{department}}</td>
+         <td>
+           <a href="/edit/{{ id }}">Edit</a>
+           <a href="/delete/{{ id }}">Delete</a>
+           </td></tr>
+      {{/each}}
+    </table>
+
+  </form>
+</div>
+
+
+</body>
+</html>
