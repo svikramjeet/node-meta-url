@@ -1,5 +1,5 @@
 #!/usr/bin/env node
- console.log('in');
+ console.log(result.rows.length);
 var pg = require('pg');
 pg.connect(process.env.DATABASE_URL, function(err, client, done) {
   var handleError = function(err) {
