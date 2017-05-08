@@ -30,7 +30,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 1111;
+var port = process.env.PORT || 4444;
 var router = express.Router();
 //var models = require('./models');
 var routes = require('./routes/index');

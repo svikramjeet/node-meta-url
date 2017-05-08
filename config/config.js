@@ -1,8 +1,8 @@
-  var dotenv = require('dotenv');
-    dotenv.load();
-  var parseDbUrl = require("parse-database-url");
- var db_url = parseDbUrl(process.env.DATABASE_URL);
- 
+var dotenv = require('dotenv');
+dotenv.load();
+var parseDbUrl = require("parse-database-url");
+var db_url = parseDbUrl(process.env.DATABASE_URL);
+
 module.exports = {
   development: {
     database: db_url.database,
