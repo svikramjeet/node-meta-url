@@ -13,7 +13,7 @@ pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if(handleError(err, client, done)) return;
 
     if (result.rows.length > 0) {
-     console.log(result.rows.length)
+     console.log(result.rows.length);
     }    
   });
 });
