@@ -17,6 +17,6 @@
     "node": "*"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   }
 }
